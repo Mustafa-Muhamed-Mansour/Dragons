@@ -155,7 +155,6 @@ fun HomeDragons(
                                 Image(
                                     modifier = Modifier.size(width = 600.dp, height = 400.dp)
 //                                        .height(height = 500.dp)
-//                                        .graphicsLayer(translationX = 25f, translationY = 40f)
                                     ,
                                     painter = painter,
                                     contentDescription = "dragon image",
