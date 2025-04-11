@@ -5,5 +5,5 @@ import com.dragons.app.network.KtorClient
 import org.koin.dsl.module
 
 val apiModule = module {
-    factory { ApiService(client = KtorClient.httpClient) }
+    single { ApiService(client = KtorClient.httpClient) }
 }

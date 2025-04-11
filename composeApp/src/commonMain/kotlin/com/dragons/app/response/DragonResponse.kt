@@ -8,6 +8,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class DragonResponse(
     @SerialName("items")
-    val dragonModels: List<DragonModel>,
-    val links: Links
+    val dragonModels: List<DragonModel>
 )

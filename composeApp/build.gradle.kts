@@ -45,19 +45,6 @@ kotlin {
             // Koin to dependency injection
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
-
-
-//            implementation("io.coil-kt:coil-compose:2.2.2")
-
-//            implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0") // Only available on Android/JVM.
-//            implementation("io.coil-kt.coil3:coil-network-ktor2:3.1.0")
-//            implementation("io.coil-kt.coil3:coil-network-ktor3:3.1.0")
-//            implementation("io.coil-kt.coil3:coil-gif:3.1.0")
-
-//            implementation("androidx.paging:paging-runtime:3.3.6")
-
-//            implementation ("com.google.accompanist:accompanist-swiperefresh:0.24.13-rc")
-
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -88,7 +75,7 @@ kotlin {
             // Feather Icons
             implementation(libs.father.icons)
 
-            // Voyager to navigate between pages or screens
+            // Voyager to navigate (between pages or screens)
             implementation(libs.voyager.navigator)
 
             // Koin to dependency injection
@@ -96,30 +83,12 @@ kotlin {
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.androidx.lifecycle.viewmodel.koin)
-
-
-            // Napier (Log)
-            implementation("io.github.aakira:napier:1.4.1")
-
-
-//            implementation("media.kamel:kamel-image-default:1.0.0")
-//
-//            implementation("io.github.panpf.sketch4:sketch-compose:1.3.0")
-//            implementation("io.github.panpf.sketch4:sketch-animated-gif:1.3.0")
-
-//            implementation("androidx.paging:paging-compose:3.3.6")
-
-//            implementation ("dev.materii.pullrefresh:pullrefresh:1.0.1")
-
-//            implementation("io.github.zj565061763.kmp:compose-refresh:1.0.0")
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
 
             implementation(libs.ktor.client.okhttp)
-
-//            implementation("org.jetbrains.skiko:skiko:0.7.59")
         }
     }
 }
@@ -158,11 +127,11 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "com.dragons.ball.MainKt"
+        mainClass = "com.dragons.app.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.dragons.ball"
+            packageName = "com.dragons.app"
             packageVersion = "1.0.0"
         }
     }

@@ -1,7 +1,6 @@
 package com.dragons.app
 
-class DesktopPlatform: Platform {
+class JVMPlatform: Platform {
     override val name: String = "Java ${System.getProperty("java.version")}"
 }
-
-actual fun getPlatform(): Platform = DesktopPlatform()
+actual fun getPlatform(): Platform = JVMPlatform()

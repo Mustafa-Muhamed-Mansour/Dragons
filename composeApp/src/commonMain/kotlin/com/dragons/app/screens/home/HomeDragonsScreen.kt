@@ -6,7 +6,8 @@ import com.dragons.app.view_model.DragonsViewModel
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 
-object HomeDragonsScreen: Screen {
+object HomeDragonsScreen : Screen {
+    private fun readResolve(): Any = HomeDragonsScreen
 
     @OptIn(KoinExperimentalAPI::class)
     @Composable
@@ -14,4 +15,5 @@ object HomeDragonsScreen: Screen {
         val viewModel = koinViewModel<DragonsViewModel>()
         HomeDragons(viewModel = viewModel)
     }
+
 }

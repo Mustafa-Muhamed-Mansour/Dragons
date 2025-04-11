@@ -95,6 +95,7 @@ mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mvvmCore" }
 #Voyager to navigate between pages or screens
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
