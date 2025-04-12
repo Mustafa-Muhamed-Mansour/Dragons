@@ -1,4 +1,4 @@
-package com.dragons.app.network
+package com.dragons.data.datasource.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout

@@ -39,7 +39,7 @@ import com.dragons.app.compositions.states.StateData
 import com.dragons.app.compositions.states.StateError
 import com.dragons.app.compositions.states.StateLoading
 import com.dragons.app.screens.search.SearchDragonsScreen
-import com.dragons.app.view_model.DragonsViewModel
+import com.dragons.app.view_models.DragonsViewModel
 import com.seiko.imageloader.rememberImagePainter
 import compose.icons.FeatherIcons
 import compose.icons.feathericons.Search

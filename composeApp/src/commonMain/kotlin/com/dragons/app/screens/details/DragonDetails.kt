@@ -38,9 +38,9 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import com.dragons.app.compositions.states.StateData
 import com.dragons.app.compositions.states.StateError
 import com.dragons.app.compositions.states.StateLoading
-import com.dragons.app.entity.DragonModel
+import com.dragons.domain.entity.DragonModel
 import com.dragons.app.screens.home.HomeDragonsScreen
-import com.dragons.app.view_model.DragonDetailsViewModel
+import com.dragons.app.view_models.DragonDetailsViewModel
 import com.seiko.imageloader.rememberImagePainter
 import compose.icons.FeatherIcons
 import compose.icons.feathericons.ArrowLeft

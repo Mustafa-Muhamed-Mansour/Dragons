@@ -1,7 +1,7 @@
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.Screen
-import com.dragons.app.entity.DragonModel
-import com.dragons.app.view_model.DragonDetailsViewModel
+import com.dragons.domain.entity.DragonModel
+import com.dragons.app.view_models.DragonDetailsViewModel
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 

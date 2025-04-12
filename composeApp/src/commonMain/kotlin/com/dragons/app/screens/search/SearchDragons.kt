@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -45,7 +44,7 @@ import com.dragons.app.compositions.states.StateData
 import com.dragons.app.compositions.states.StateError
 import com.dragons.app.compositions.states.StateLoading
 import com.dragons.app.screens.home.HomeDragonsScreen
-import com.dragons.app.view_model.SearchDragonsViewModel
+import com.dragons.app.view_models.SearchDragonsViewModel
 import com.seiko.imageloader.rememberImagePainter
 import compose.icons.FeatherIcons
 import compose.icons.feathericons.Home

@@ -1,4 +1,4 @@
-package com.dragons.app.response
+package com.dragons.domain.response
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.dragons.app.entity
+package com.dragons.domain.entity
 
 import kotlinx.serialization.Serializable
 

@@ -2,7 +2,7 @@ package com.dragons.app.screens.search
 
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.Screen
-import com.dragons.app.view_model.SearchDragonsViewModel
+import com.dragons.app.view_models.SearchDragonsViewModel
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 

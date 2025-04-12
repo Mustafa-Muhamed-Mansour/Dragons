@@ -1,8 +1,8 @@
 package com.dragons.app.utils
 
-import com.dragons.app.entity.DragonModel
-import com.dragons.app.response.CharacterResponseById
-import com.dragons.app.response.SearchDragonsResponseItem
+import com.dragons.domain.entity.DragonModel
+import com.dragons.domain.response.CharacterResponseById
+import com.dragons.domain.response.SearchDragonsResponseItem
 
 
 data class UiStateDragons(

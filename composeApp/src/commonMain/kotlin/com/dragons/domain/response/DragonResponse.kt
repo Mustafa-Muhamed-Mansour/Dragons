@@ -1,6 +1,6 @@
-package com.dragons.app.response
+package com.dragons.domain.response
 
-import com.dragons.app.entity.DragonModel
+import com.dragons.domain.entity.DragonModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

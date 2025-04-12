@@ -1,13 +1,13 @@
 package com.dragons.app.di
 
-import com.dragons.app.view_model.DragonDetailsViewModel
-import com.dragons.app.view_model.DragonsViewModel
-import com.dragons.app.view_model.SearchDragonsViewModel
+import com.dragons.app.view_models.DragonDetailsViewModel
+import com.dragons.app.view_models.DragonsViewModel
+import com.dragons.app.view_models.SearchDragonsViewModel
 import org.koin.compose.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    viewModel { DragonsViewModel(dragonsRepository = get() ) }
-    viewModel { DragonDetailsViewModel(dragonDetailsRepository = get() ) }
-    viewModel { SearchDragonsViewModel(searchDragonsRepository = get() ) }
+    viewModel { DragonsViewModel(dragonsUseCase = get()) }
+    viewModel { DragonDetailsViewModel(dragonDetailsUseCase = get()) }
+    viewModel { SearchDragonsViewModel(searchDragonsUseCase = get()) }
 }
