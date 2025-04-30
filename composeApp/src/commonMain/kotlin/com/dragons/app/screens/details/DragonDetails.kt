@@ -1,19 +1,27 @@
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.material3.CardDefaults
@@ -29,6 +37,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.FilterQuality
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -50,9 +59,11 @@ import dragons.composeapp.generated.resources.fighter
 import dragons.composeapp.generated.resources.loading_black
 import dragons.composeapp.generated.resources.male
 import dragons.composeapp.generated.resources.not_found
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun DragonDetails(
     viewModel: DragonDetailsViewModel,
@@ -93,6 +104,14 @@ fun DragonDetails(
 
     else {
         uiState?.data?.let { response ->
+            val pagerState = rememberPagerState(pageCount = { response.transformations.size })
+            LaunchedEffect(Unit) {
+                while (true) {
+                    delay(timeMillis = 5000L)
+                    val nextPage = (pagerState.currentPage + 1) % response.transformations.size
+                    pagerState.animateScrollToPage(nextPage)
+                }
+            }
             StateData(
                 content = { vertical, horizontal ->
                     Column(
@@ -124,40 +143,52 @@ fun DragonDetails(
                                 textAlign = TextAlign.Center
                             )
 
-                            LazyRow(
-                                state = scrollState,
-                                modifier = Modifier
-                                    .size(width = 900.dp, height = 400.dp).draggable(
-                                        orientation = Orientation.Horizontal,
-                                        state = rememberDraggableState { delta ->
-                                            scope.launch {
-                                                scrollState.scrollBy(value = -delta)
-                                            }
-                                        })
-                            ) {
-                                item {
-                                    if (response?.transformations.isNullOrEmpty()) {
+                            // Start Image slider
+                            Column {
+                                HorizontalPager(
+                                    state = pagerState,
+                                ) { page ->
+
+                                    // Normal Slider
+                                    Box(modifier = Modifier.fillMaxSize()) {
+                                        val painter = rememberImagePainter(
+                                            url = response.transformations[page].image,
+                                            filterQuality = FilterQuality.High,
+                                            placeholderPainter = { painterResource(resource = Res.drawable.loading_black) },
+                                            errorPainter = { painterResource(resource = Res.drawable.loading_black) })
                                         Image(
                                             modifier = Modifier
-                                                .size(width = 300.dp, height = 200.dp)
-                                                .align(Alignment.CenterHorizontally),
-                                            painter = painterResource(Res.drawable.not_found),
-                                            contentDescription = "transformation dragon",
+                                                .size(width = 900.dp, height = 400.dp),
+                                            painter = painter,
+                                            contentDescription = "transformations dragon"
                                         )
-                                    } else {
-                                        response.transformations.forEach { images ->
-                                            val painter = rememberImagePainter(url = images.image,
-                                                filterQuality = FilterQuality.High,
-                                                placeholderPainter = { painterResource(resource = Res.drawable.loading_black) },
-                                                errorPainter = { painterResource(resource = Res.drawable.loading_black) })
-                                            Image(
-                                                painter = painter,
-                                                contentDescription = "transformation dragon",
-                                            )
-                                        }
+                                    }
+                                }
+
+                                Spacer(modifier = Modifier.height(height = 8.dp))
+
+                                // Indicator (Dots)
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(8.dp),
+                                    horizontalArrangement = Arrangement.Center
+                                ) {
+                                    repeat(response.transformations.size) { index ->
+                                        val selectedPage = pagerState.currentPage == index
+                                        Box(
+                                            modifier = Modifier
+                                                .padding(horizontal = 4.dp)
+                                                .size(size = if (selectedPage) 10.dp else 8.dp)
+                                                .background(
+                                                    color = if (selectedPage) Color.Blue else Color.Gray,
+                                                    shape = if (selectedPage) CircleShape else RectangleShape
+                                                )
+                                        )
                                     }
                                 }
                             }
+                            // End Image slier
                         }
 
                         Column(
