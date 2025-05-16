@@ -14,7 +14,7 @@ A dragon ball, your information hub for the latest Dragon Ball manga, anime, mer
 
 ## 📱Mobile
 <img src = "https://github.com/user-attachments/assets/39630adc-e352-43ea-befa-d9b9a44b3c89" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/2da14dc3-7806-4ea9-b66e-a17a3f5e530c" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/c03c77de-3d22-4d9b-880e-a2e7a415f2dc" width = "200" height = "400">
-<img src = "(https://github.com/user-attachments/assets/d104e492-b80b-4c2d-be7e-c53669700540" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/366775c1-7a91-40aa-b9d9-f257fe238ab4" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/054480f5-c0e7-427f-8fe0-ccf431184cdb" width = "200" height = "400">
+<img src = "https://github.com/user-attachments/assets/d104e492-b80b-4c2d-be7e-c53669700540" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/366775c1-7a91-40aa-b9d9-f257fe238ab4" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/054480f5-c0e7-427f-8fe0-ccf431184cdb" width = "200" height = "400">
 <img src = "https://github.com/user-attachments/assets/bb268894-4920-47f3-b065-a3e99f7f511a" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/4880f64e-06dc-4015-b2da-9fbd8b5a09fa" width = "200" height = "400">  <img src = "https://github.com/user-attachments/assets/5b9d9df0-d2e2-49d9-a67c-5a71bf3973a8" width = "200" height = "400">
 <img src = "https://github.com/user-attachments/assets/0e7ec804-f707-40dc-85b1-8453c1a69bc1" width = "200" height = "400">
 
