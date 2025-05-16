@@ -41,11 +41,13 @@ A dragon ball, your information hub for the latest Dragon Ball manga, anime, mer
 
 
 # 📹Demo video
-
-## (🥴Without using image slider)
-
-<td> 
+<td>
       <video src = "https://github.com/user-attachments/assets/5f8d70f6-f0db-488e-98de-9530c5a70bbc" type="video/mp4"/>
+</td>
+            
+## (🥴Without using image slider)
+<td> 
+      <video src = "" type="video/mp4"/>
 </td>
 
 
